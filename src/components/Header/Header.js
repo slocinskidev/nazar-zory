@@ -5,6 +5,7 @@ import Image from 'gatsby-image';
 import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import Hero from '../Hero/Hero';
+import MouseScroll from '../MouseScroll/MouseScroll';
 
 const HeaderWrapper = styled.header`
   width: 100%;
@@ -47,12 +48,13 @@ const Header = () => {
     }
   `);
   return (
-    <HeaderWrapper>
+    <HeaderWrapper id="start">
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
       <Overlay>
         <Logo />
-        {/* <Menu /> */}
+        <Menu />
         <Hero />
+        <MouseScroll />
       </Overlay>
     </HeaderWrapper>
   );

@@ -13,6 +13,7 @@ const Heading = styled.h1`
   letter-spacing: 0.2px;
   line-height: 46px;
   font-weight: ${({ theme }) => theme.font.bold};
+  padding-bottom: 20px;
 `;
 
 const Button = styled.button`
