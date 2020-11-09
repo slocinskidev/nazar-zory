@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
 
 const AnchorWrapper = styled.a`
   display: block;
@@ -17,7 +16,7 @@ const StyledImage = styled.div`
 
 const Logo = () => {
   const data = useStaticQuery(graphql`
-  {
+    {
       file(name: { eq: "logo" }) {
         childImageSharp {
           fixed(width: 200, height: 200) {
@@ -31,7 +30,7 @@ const Logo = () => {
     <AnchorWrapper href="/">
       <StyledImage image={data.file.childImageSharp.fixed.src} alt="" />
     </AnchorWrapper>
-  )
-}
+  );
+};
 
 export default Logo;
