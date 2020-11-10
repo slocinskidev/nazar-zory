@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
@@ -33,6 +33,7 @@ const Overlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  overflow: hidden;
 `;
 
 const Header = () => {
@@ -47,12 +48,17 @@ const Header = () => {
       }
     }
   `);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <HeaderWrapper id="start">
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
       <Overlay>
         <Logo />
-        <Menu />
+        <Menu isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
         <Hero />
         <MouseScroll />
       </Overlay>

@@ -1,9 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 
+const NavigationWrapper = styled.nav`
+  width: 100%;
+`;
+
 const Hamburger = styled.button`
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 1rem;
   display: flex;
@@ -25,11 +29,13 @@ const Hamburger = styled.button`
 const HamburgerBox = styled.span`
   width: 3rem;
   height: 0.3rem;
-  background: ${({ theme }) => theme.color.white};
+  background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.grey1 : theme.color.white)};
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;
   transform-origin: 1px;
+  z-index: 10;
+  background-color: ${({ isMenuOpen }) => (isMenuOpen ? 'transparent' : 'white')};
 
   &::before,
   &::after {
@@ -37,7 +43,7 @@ const HamburgerBox = styled.span`
     display: block;
     width: 3rem;
     height: 0.3rem;
-    background: ${({ theme }) => theme.color.white};
+    background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.grey1 : theme.color.white)};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: absolute;
@@ -46,9 +52,13 @@ const HamburgerBox = styled.span`
 
   &::before {
     top: -0.8rem;
+    transform: ${({ isMenuOpen }) =>
+      isMenuOpen ? 'translateY(-0.3rem) translateX(0.4rem) rotate(45deg) ' : 'rotate(0)'};
   }
 
   &::after {
+    transform: ${({ isMenuOpen }) =>
+      isMenuOpen ? 'translateY(0) translateX(0.4rem) rotate(-45deg)' : 'rotate(0)'};
     top: 0.8rem;
   }
 `;
@@ -59,20 +69,26 @@ const NavigationList = styled.ul`
   justify-content: center;
   background: ${({ theme }) => theme.color.white};
   height: 100vh;
+  min-width: 240px;
   text-align: center;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
-  color: ${({ theme }) => theme.color.grey1};
   list-style: none;
-  font-size: ${({ theme }) => theme.size.s};
-  font-weight: ${({ theme }) => theme.font.medium};
+  transform: ${({ isMenuOpen }) => (isMenuOpen ? 'translateX(0)' : 'translateX(100%)')};
 `;
 
 const NavigationItem = styled.li`
   margin: 30px 20px;
+`;
+
+const StyledLink = styled(Link)`
+  font-size: ${({ theme }) => theme.size.s};
+  font-weight: ${({ theme }) => theme.font.medium};
+  color: ${({ theme }) => theme.color.grey1};
+  text-decoration: none;
 `;
 
 const SrOnly = styled.span`
@@ -87,28 +103,28 @@ const SrOnly = styled.span`
   width: 1px;
 `;
 
-const Menu = () => {
+const Menu = ({ isMenuOpen, handleToggleMenu }) => {
   return (
-    <nav>
-      <Hamburger type="button" aria-expanded="false">
+    <NavigationWrapper>
+      <Hamburger type="button" aria-expanded="false" onClick={() => handleToggleMenu()}>
         <SrOnly>Open/close menu</SrOnly>
-        <HamburgerBox />
+        <HamburgerBox isMenuOpen={isMenuOpen} />
       </Hamburger>
-      <NavigationList>
-        <NavigationItem active>
-          <Link to="/#start">Start</Link>
+      <NavigationList isMenuOpen={isMenuOpen}>
+        <NavigationItem>
+          <StyledLink to="/#start">Start</StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <Link to="/#o-nas">O Nas</Link>
+          <StyledLink to="/#o-nas">O Nas</StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <Link to="/#menu">Menu</Link>
+          <StyledLink to="/#menu">Menu</StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <Link to="/#kontakt">Kontakt</Link>
+          <StyledLink to="/#kontakt">Kontakt</StyledLink>
         </NavigationItem>
       </NavigationList>
-    </nav>
+    </NavigationWrapper>
   );
 };
 
