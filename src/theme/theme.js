@@ -35,8 +35,4 @@ export const theme = {
     m: '.5rem',
     l: '2rem',
   },
-  media: {
-    tablet: '@media (min-width: 728px)',
-    desktop: '@media (min-width: 1024px',
-  },
 };

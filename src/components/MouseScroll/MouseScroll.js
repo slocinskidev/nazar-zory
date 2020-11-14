@@ -10,6 +10,7 @@ const OutlineWrapper = styled.div`
   justify-content: center;
   align-items: start;
   padding: 3px 0;
+  margin: 3rem;
 `;
 
 const Circle = styled.div`

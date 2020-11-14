@@ -1,10 +1,9 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
+import styled from 'styled-components';
+import { device } from '../../theme/device';
 
-const NavigationWrapper = styled.nav`
-  width: 100%;
-`;
+const NavigationWrapper = styled.nav``;
 
 const Hamburger = styled.button`
   position: fixed;
@@ -23,6 +22,10 @@ const Hamburger = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media ${device.laptop} {
+    display: none;
   }
 `;
 
@@ -67,7 +70,7 @@ const NavigationList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.white};
   height: 100vh;
   min-width: 240px;
   text-align: center;
@@ -78,17 +81,40 @@ const NavigationList = styled.ul`
   transition: transform 0.3s ease-in-out;
   list-style: none;
   transform: ${({ isMenuOpen }) => (isMenuOpen ? 'translateX(0)' : 'translateX(100%)')};
+
+  @media ${device.laptop} {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    transform: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      color: ${({ theme, isScrolled }) => (isScrolled ? theme.color.grey1 : theme.color.white)};
+    }
+  }
 `;
 
 const NavigationItem = styled.li`
-  margin: 30px 20px;
+  margin: 2rem 1rem;
+
+  .active {
+    color: ${({ theme }) => theme.color.tertiary};
+  }
 `;
 
 const StyledLink = styled(Link)`
+  cursor: pointer;
   font-size: ${({ theme }) => theme.size.s};
   font-weight: ${({ theme }) => theme.font.medium};
   color: ${({ theme }) => theme.color.grey1};
   text-decoration: none;
+  padding: 1rem;
 `;
 
 const SrOnly = styled.span`
@@ -103,25 +129,34 @@ const SrOnly = styled.span`
   width: 1px;
 `;
 
-const Menu = ({ isMenuOpen, handleToggleMenu }) => {
+const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
   return (
     <NavigationWrapper>
       <Hamburger type="button" aria-expanded="false" onClick={() => handleToggleMenu()}>
         <SrOnly>Open/close menu</SrOnly>
         <HamburgerBox isMenuOpen={isMenuOpen} />
       </Hamburger>
-      <NavigationList isMenuOpen={isMenuOpen}>
+
+      <NavigationList isMenuOpen={isMenuOpen} isScrolled={isScrolled}>
         <NavigationItem>
-          <StyledLink to="/#start">Start</StyledLink>
+          <StyledLink activeClass="active" to="start" spy smooth duration={1000}>
+            Start
+          </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/#o-nas">O Nas</StyledLink>
+          <StyledLink activeClass="active" to="o-nas" spy smooth duration={1000}>
+            O Nas
+          </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/#menu">Menu</StyledLink>
+          <StyledLink activeClass="active" to="menu" spy smooth duration={1000}>
+            Menu
+          </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/#kontakt">Kontakt</StyledLink>
+          <StyledLink activeClass="active" to="kontakt" spy smooth duration={1000}>
+            Kontakt
+          </StyledLink>
         </NavigationItem>
       </NavigationList>
     </NavigationWrapper>

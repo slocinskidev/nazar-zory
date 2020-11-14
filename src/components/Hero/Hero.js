@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.section`
   text-align: center;
-  display: grid;
-  justify-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 768px;
 `;
 
 const Heading = styled.h1`
@@ -13,7 +16,14 @@ const Heading = styled.h1`
   letter-spacing: 0.2px;
   line-height: 46px;
   font-weight: ${({ theme }) => theme.font.bold};
-  padding-bottom: 20px;
+  padding-bottom: 2rem;
+  margin: 0;
+
+  @media ${device.laptop} {
+    font-size: ${({ theme }) => theme.size.xxl};
+    line-height: 82px;
+    padding-bottom: 6rem;
+  }
 `;
 
 const Button = styled.button`
@@ -25,8 +35,12 @@ const Button = styled.button`
   font-weight: ${({ theme }) => theme.font.bold};
   display: block;
   border: none;
-  margin: 1rem 0;
+  margin: 1rem;
   text-transform: uppercase;
+
+  @media ${device.laptop} {
+    margin: 1rem 2rem;
+  }
 `;
 
 const Hero = () => {

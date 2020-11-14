@@ -1,17 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import { device } from '../../theme/device';
 
 const AnchorWrapper = styled.a`
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 161px;
+  height: 78px;
+
+  @media ${device.laptop} {
+    justify-content: space-between;
+    width: 140px;
+    height: 68px;
+  }
 `;
 
-const StyledImage = styled.div`
-  width: 200px;
-  height: 200px;
-  background-image: url(${({ image }) => image});
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: 100%;
 `;
 
 const Logo = () => {
@@ -19,8 +26,8 @@ const Logo = () => {
     {
       file(name: { eq: "logo" }) {
         childImageSharp {
-          fixed(width: 200, height: 200) {
-            src
+          fluid {
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -28,7 +35,7 @@ const Logo = () => {
   `);
   return (
     <AnchorWrapper href="/">
-      <StyledImage image={data.file.childImageSharp.fixed.src} alt="" />
+      <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
     </AnchorWrapper>
   );
 };
