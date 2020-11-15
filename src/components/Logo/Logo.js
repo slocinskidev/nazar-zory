@@ -21,21 +21,28 @@ const StyledImage = styled(Image)`
   height: 100%;
 `;
 
-const Logo = () => {
+const Logo = ({ isScrolled }) => {
   const data = useStaticQuery(graphql`
     {
-      file(name: { eq: "logo" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_noBase64
+      allFile(filter: { name: { regex: "/nazar-logo/" } }) {
+        nodes {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
         }
       }
     }
   `);
+
   return (
     <AnchorWrapper href="/">
-      <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
+      {isScrolled ? (
+        <StyledImage fluid={data.allFile.nodes[0].childImageSharp.fluid} alt="" />
+      ) : (
+        <StyledImage fluid={data.allFile.nodes[1].childImageSharp.fluid} alt="" />
+      )}
     </AnchorWrapper>
   );
 };

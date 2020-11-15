@@ -30,10 +30,10 @@ const Overlay = styled.div`
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
-  padding: 0 2rem 2rem;
+  padding: 2rem;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   overflow: hidden;
 `;
 
@@ -89,7 +89,7 @@ const Header = () => {
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
       <Overlay>
         <NavigationBar isScrolled={scrolled}>
-          <Logo />
+          <Logo isScrolled={scrolled} />
           <Menu isScrolled={scrolled} isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
         </NavigationBar>
         <Hero />

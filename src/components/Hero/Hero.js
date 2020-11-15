@@ -16,6 +16,7 @@ const Heading = styled.h1`
   letter-spacing: 0.2px;
   line-height: 46px;
   font-weight: ${({ theme }) => theme.font.bold};
+  padding-top: 2rem;
   padding-bottom: 2rem;
   margin: 0;
 
@@ -35,7 +36,7 @@ const Button = styled.button`
   font-weight: ${({ theme }) => theme.font.bold};
   display: block;
   border: none;
-  margin: 1rem;
+  margin: 0 0 1rem 0;
   text-transform: uppercase;
 
   @media ${device.laptop} {
