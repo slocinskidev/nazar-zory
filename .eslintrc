@@ -14,7 +14,7 @@
     "node": true
   },
   "globals": {
-    "window": true,
+    "window": false,
     "document": false
   }
 }

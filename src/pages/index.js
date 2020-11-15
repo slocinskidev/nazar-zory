@@ -45,9 +45,12 @@ const AboutText = styled.p`
 `;
 
 const IndexPage = () => {
-  window.upmenuSettings = {
-    id: '684c1bda-ce09-11e8-90ba-525400080321',
-  };
+  if (typeof window !== `undefined`) {
+    window.upmenuSettings = {
+      id: '684c1bda-ce09-11e8-90ba-525400080321',
+    };
+  }
+
   return (
     <Layout>
       <Header />
