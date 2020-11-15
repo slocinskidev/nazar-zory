@@ -33,8 +33,12 @@ const Overlay = styled.div`
   padding: 2rem;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   overflow: hidden;
+
+  @media ${device.laptop} {
+    justify-content: space-between;
+  }
 `;
 
 const NavigationBar = styled.section`
@@ -43,7 +47,7 @@ const NavigationBar = styled.section`
   justify-content: center;
 
   @media ${device.laptop} {
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: ${({ theme, isScrolled }) =>
       isScrolled ? theme.color.white : 'transparent'};
@@ -59,7 +63,7 @@ const Header = () => {
     {
       file(name: { eq: "header-bg" }) {
         childImageSharp {
-          fluid(maxWidth: 1440, quality: 100) {
+          fluid(maxWidth: 2560, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -74,7 +78,7 @@ const Header = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 600) {
       setScrolled(true);
     } else {
       setScrolled(false);

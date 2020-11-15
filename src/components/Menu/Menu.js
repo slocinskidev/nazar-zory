@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
+import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import { device } from '../../theme/device';
 
 const NavigationWrapper = styled.nav``;
@@ -96,6 +97,7 @@ const NavigationList = styled.ul`
 
     li a {
       color: ${({ theme, isScrolled }) => (isScrolled ? theme.color.grey1 : theme.color.white)};
+      font-size: ${({ theme, isScrolled }) => (isScrolled ? theme.size.s : theme.size.m)};
     }
   }
 `;
@@ -158,6 +160,7 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
             Kontakt
           </StyledLink>
         </NavigationItem>
+        <DeliveryInfo />
       </NavigationList>
     </NavigationWrapper>
   );

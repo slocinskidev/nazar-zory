@@ -36,7 +36,7 @@ const Button = styled.button`
   font-weight: ${({ theme }) => theme.font.bold};
   display: block;
   border: none;
-  margin: 0 0 1rem 0;
+  margin: 0 1rem 1rem 1rem;
   text-transform: uppercase;
 
   @media ${device.laptop} {

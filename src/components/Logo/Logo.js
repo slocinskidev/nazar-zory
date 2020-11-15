@@ -10,9 +10,8 @@ const AnchorWrapper = styled.a`
   height: 78px;
 
   @media ${device.laptop} {
-    justify-content: space-between;
-    width: 140px;
-    height: 68px;
+    width: ${({ isScrolled }) => (isScrolled ? '140px' : '240px')};
+    height: ${({ isScrolled }) => (isScrolled ? '68px' : '116px')};
   }
 `;
 
@@ -28,7 +27,7 @@ const Logo = ({ isScrolled }) => {
         nodes {
           childImageSharp {
             fluid {
-              src
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -37,7 +36,7 @@ const Logo = ({ isScrolled }) => {
   `);
 
   return (
-    <AnchorWrapper href="/">
+    <AnchorWrapper isScrolled={isScrolled} href="/">
       {isScrolled ? (
         <StyledImage fluid={data.allFile.nodes[0].childImageSharp.fluid} alt="" />
       ) : (
