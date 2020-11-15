@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import Layout from '../layouts/Layout';
 import Header from '../components/Header/Header';
 import SectionHeading from '../components/SectionHeading/SectionHeading';
@@ -32,6 +33,8 @@ const About = styled.section`
   }
 `;
 
+const UpMenu = styled.section``;
+
 const AboutText = styled.p`
   margin: 2rem 0 0 0;
   font-size: ${({ theme }) => theme.size.xs};
@@ -42,6 +45,9 @@ const AboutText = styled.p`
 `;
 
 const IndexPage = () => {
+  window.upmenuSettings = {
+    id: '684c1bda-ce09-11e8-90ba-525400080321',
+  };
   return (
     <Layout>
       <Header />
@@ -64,9 +70,14 @@ const IndexPage = () => {
           </AboutText>
           <AboutSocials text="Sprawdź nas na" />
         </About>
-        <div id="menu" style={{ background: 'yellow', height: '100vh' }}>
-          Hi people
-        </div>
+        <UpMenu id="menu">
+          <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
+
+          <Helmet>
+            <script src="https://cdn.upmenu.com/media/upmenu-widget.js" />
+          </Helmet>
+          <div id="upmenu-widget" />
+        </UpMenu>
         <div id="kontakt" style={{ background: 'blue', height: '100vh' }}>
           Hi people
         </div>
