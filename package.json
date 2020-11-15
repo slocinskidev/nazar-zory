@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@iconify/icons-ant-design": "^1.0.8",
     "@iconify/icons-carbon": "^1.0.7",
     "@iconify/react": "^1.1.3",
     "babel-plugin-styled-components": "^1.11.1",
