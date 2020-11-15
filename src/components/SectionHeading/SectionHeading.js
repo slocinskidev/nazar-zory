@@ -7,6 +7,7 @@ const Wrapper = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  grid-area: heading;
 `;
 
 const Heading = styled.h2`

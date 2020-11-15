@@ -19,7 +19,7 @@ const Hamburger = styled.button`
   border: none;
   cursor: pointer;
   padding: 1rem;
-  z-index: 10;
+  z-index: 11;
 
   &:focus {
     outline: none;
@@ -31,6 +31,7 @@ const Hamburger = styled.button`
 `;
 
 const HamburgerBox = styled.span`
+  z-index: 11;
   width: 3rem;
   height: 0.3rem;
   background: ${({ theme, isMenuOpen }) => (isMenuOpen ? theme.color.grey1 : theme.color.white)};
@@ -38,7 +39,7 @@ const HamburgerBox = styled.span`
   transition: all 0.3s linear;
   position: relative;
   transform-origin: 1px;
-  z-index: 10;
+  z-index: 11;
   background-color: ${({ isMenuOpen }) => (isMenuOpen ? 'transparent' : 'white')};
 
   &::before,
@@ -68,6 +69,7 @@ const HamburgerBox = styled.span`
 `;
 
 const NavigationList = styled.ul`
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +162,7 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
             Kontakt
           </StyledLink>
         </NavigationItem>
-        <DeliveryInfo />
+        <DeliveryInfo isScrolled={isScrolled} />
       </NavigationList>
     </NavigationWrapper>
   );

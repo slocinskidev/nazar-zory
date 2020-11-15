@@ -6,9 +6,30 @@ import SectionHeading from '../components/SectionHeading/SectionHeading';
 import kebabIcon from '../images/kebab-icon-red.svg';
 import AboutImage from '../components/AboutImage/AboutImage';
 import AboutSocials from '../components/AboutSocials/AboutSocials';
+import { device } from '../theme/device';
 
 const About = styled.section`
+  width: 100%;
+  max-width: 1200px;
   padding: 6rem 2rem;
+  display: grid;
+  grid-template-areas:
+    'heading heading'
+    'image image'
+    'text text'
+    'socials socials';
+
+  @media ${device.laptop} {
+    grid-template-areas:
+      'heading heading'
+      'image text'
+      'image socials';
+    grid-template-rows: auto auto auto;
+    margin: 0 auto;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+  }
 `;
 
 const AboutText = styled.p`
@@ -17,6 +38,7 @@ const AboutText = styled.p`
   color: ${({ theme }) => theme.color.grey2};
   line-height: 25px;
   text-align: center;
+  grid-area: text;
 `;
 
 const IndexPage = () => {

@@ -4,13 +4,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
 
 const StyledImage = styled(Image)`
+  grid-area: image;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
 `;
 
-export default function AboutImage() {
+const AboutImage = () => {
   const data = useStaticQuery(graphql`
     {
       file(name: { eq: "about-image" }) {
@@ -23,4 +23,6 @@ export default function AboutImage() {
     }
   `);
   return <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />;
-}
+};
+
+export default AboutImage;

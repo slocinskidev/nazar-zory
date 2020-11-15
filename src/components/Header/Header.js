@@ -42,6 +42,7 @@ const Overlay = styled.div`
 `;
 
 const NavigationBar = styled.section`
+  z-index: 10;
   width: 100%;
   display: flex;
   justify-content: center;

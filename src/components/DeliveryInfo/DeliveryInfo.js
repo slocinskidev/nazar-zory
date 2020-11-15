@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
   @media ${device.laptop} {
     margin: 0 0 0 4rem;
-    color: ${({ theme }) => theme.color.white};
+    color: ${({ theme, isScrolled }) => (isScrolled ? theme.color.grey1 : theme.color.white)};
   }
 `;
 
@@ -22,11 +22,11 @@ const Info = styled.p`
   margin-left: 1rem;
 `;
 
-const DeliveryInfo = () => {
+const DeliveryInfo = ({ isScrolled }) => {
   return (
-    <Wrapper>
+    <Wrapper isScrolled={isScrolled}>
       <Icon icon={deliveryTruck} style={{ fontSize: '35px' }} />
-      <Info>dostawa: 0 zł - 5 zł</Info>
+      <Info>0,00 zł - 5,00 zł</Info>
     </Wrapper>
   );
 };

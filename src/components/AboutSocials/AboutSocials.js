@@ -5,6 +5,7 @@ import instagramOutlined from '@iconify/icons-ant-design/instagram-outlined';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  grid-area: socials;
   margin: 4rem 0 0 0;
   display: grid;
   justify-content: center;

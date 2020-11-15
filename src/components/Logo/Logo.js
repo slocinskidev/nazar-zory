@@ -38,9 +38,9 @@ const Logo = ({ isScrolled }) => {
   return (
     <AnchorWrapper isScrolled={isScrolled} href="/">
       {isScrolled ? (
-        <StyledImage fluid={data.allFile.nodes[0].childImageSharp.fluid} alt="" />
-      ) : (
         <StyledImage fluid={data.allFile.nodes[1].childImageSharp.fluid} alt="" />
+      ) : (
+        <StyledImage fluid={data.allFile.nodes[0].childImageSharp.fluid} alt="" />
       )}
     </AnchorWrapper>
   );
