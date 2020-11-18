@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nazar-kebab-zory.netlify.app/">
-    <img src="/src/images/logo.png" alt="Nazar Kebab Żory" width="200px height="200px">
+    <img src="/src/images/nazar-logo.png" alt="Nazar Kebab Żory" width="200px height="200px">
   </a>
 </p>
 <h1 align="center">
