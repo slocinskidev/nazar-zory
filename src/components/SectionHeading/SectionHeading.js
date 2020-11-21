@@ -12,14 +12,14 @@ const Wrapper = styled.header`
 
 const Heading = styled.h2`
   font-size: ${({ theme }) => theme.size.l};
-  color: ${({ theme }) => theme.color.grey1};
+  color: ${({ theme, contact }) => (contact ? theme.color.white : theme.color.grey1)};
   font-weight: ${({ theme }) => theme.font.bold};
-  margin: 1rem 0 2rem;
+  margin: 2rem 0 6rem;
 `;
 
 const SubHeading = styled.p`
   font-size: ${({ theme }) => theme.size.xxs};
-  color: ${({ theme }) => theme.color.tertiary};
+  color: ${({ theme, contact }) => (contact ? theme.color.secondary : theme.color.tertiary)};
   font-weight: ${({ theme }) => theme.font.extraBold};
   text-transform: uppercase;
 `;
@@ -30,12 +30,12 @@ const Icon = styled.img`
   margin-bottom: 1rem;
 `;
 
-const SectionHeading = ({ icon, heading, subHeading }) => {
+const SectionHeading = ({ icon, heading, subHeading, contact }) => {
   return (
     <Wrapper>
       {icon && <Icon src={icon} alt="" />}
-      {subHeading && <SubHeading>{subHeading}</SubHeading>}
-      {heading && <Heading>{heading}</Heading>}
+      {subHeading && <SubHeading contact={contact}>{subHeading}</SubHeading>}
+      {heading && <Heading contact={contact}>{heading}</Heading>}
     </Wrapper>
   );
 };

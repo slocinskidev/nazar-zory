@@ -6,13 +6,14 @@ import Header from '../components/Header/Header';
 import SectionHeading from '../components/SectionHeading/SectionHeading';
 import kebabIcon from '../images/kebab-icon-red.svg';
 import AboutImage from '../components/AboutImage/AboutImage';
-import AboutSocials from '../components/AboutSocials/AboutSocials';
+import Socials from '../components/Socials/Socials';
 import { device } from '../theme/device';
+import Contact from '../components/Contact/Contact';
 
 const About = styled.section`
   width: 100%;
   max-width: 1200px;
-  padding: 6rem 2rem;
+  padding: 12rem 2rem;
   display: grid;
   grid-template-areas:
     'heading heading'
@@ -33,7 +34,11 @@ const About = styled.section`
   }
 `;
 
-const UpMenu = styled.section``;
+const UpMenu = styled.section`
+  padding: 12rem 2rem;
+
+  min-height: 100vh;
+`;
 
 const AboutText = styled.p`
   margin: 2rem 0 0 0;
@@ -42,6 +47,12 @@ const AboutText = styled.p`
   line-height: 25px;
   text-align: center;
   grid-area: text;
+
+  @media ${device.laptop} {
+    margin: 0;
+    font-size: ${({ theme }) => theme.size.s};
+    text-align: left;
+  }
 `;
 
 const IndexPage = () => {
@@ -71,19 +82,17 @@ const IndexPage = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum.
           </AboutText>
-          <AboutSocials text="Sprawdź nas na" />
+          <Socials text="Sprawdź nas na" />
         </About>
-        <UpMenu id="menu">
+        {/* <UpMenu id="menu">
           <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
 
           <Helmet>
             <script src="https://cdn.upmenu.com/media/upmenu-widget.js" />
           </Helmet>
           <div id="upmenu-widget" />
-        </UpMenu>
-        <div id="kontakt" style={{ background: 'blue', height: '100vh' }}>
-          Hi people
-        </div>
+        </UpMenu> */}
+        <Contact id="kontakt" />
       </main>
     </Layout>
   );

@@ -5,11 +5,11 @@ import instagramOutlined from '@iconify/icons-ant-design/instagram-outlined';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  grid-area: socials;
-  margin: 4rem 0 0 0;
+  ${({ footer }) => !footer && `grid-area: socials`};
   display: grid;
   justify-content: center;
   color: ${({ theme }) => theme.color.grey1};
+  ${({ footer }) => footer && `justify-self: flex-end`};
 `;
 
 const IconWrapper = styled.div`
@@ -19,8 +19,8 @@ const IconWrapper = styled.div`
 `;
 
 const StyledIcon = styled(Icon)`
-  width: 60px;
-  height: 60px;
+  width: ${({ footer }) => (footer ? '50px' : '60px')};
+  height: ${({ footer }) => (footer ? '50px' : '60px')};
   padding: 1rem;
 `;
 
@@ -29,18 +29,19 @@ const Text = styled.p`
   color: ${({ theme }) => theme.color.tertiary};
   font-weight: ${({ theme }) => theme.font.extraBold};
   text-transform: uppercase;
+  padding: 4rem 0 2rem 0;
 `;
 
-const AboutSocials = ({ text }) => {
+const Socials = ({ text, footer }) => {
   return (
-    <Wrapper>
+    <Wrapper footer={footer}>
       {text && <Text>{text}</Text>}
       <IconWrapper>
-        <StyledIcon icon={facebookOutlined} />
-        <StyledIcon icon={instagramOutlined} />
+        <StyledIcon footer={footer} icon={facebookOutlined} />
+        <StyledIcon footer={footer} icon={instagramOutlined} />
       </IconWrapper>
     </Wrapper>
   );
 };
 
-export default AboutSocials;
+export default Socials;
