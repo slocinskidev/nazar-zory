@@ -84,15 +84,14 @@ const IndexPage = () => {
           </AboutText>
           <Socials text="Sprawdź nas na" />
         </About>
-        {/* <UpMenu id="menu">
+        <UpMenu id="menu">
           <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
-
           <Helmet>
             <script src="https://cdn.upmenu.com/media/upmenu-widget.js" />
           </Helmet>
-          <div id="upmenu-widget" />
-        </UpMenu> */}
-        <Contact id="kontakt" />
+          <div id="upmenu-widget" data-fixed-offset-top="100" />
+        </UpMenu>
+        <Contact />
       </main>
     </Layout>
   );

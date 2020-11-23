@@ -33,11 +33,12 @@ const CopyrightInfo = styled.p`
   font-size: ${({ theme }) => theme.size.xxs};
   color: ${({ theme }) => theme.color.gray3};
   padding: 2rem 0 1rem 0;
-  order: -1;
+  order: 0;
   justify-self: flex-start;
 
   @media ${device.laptop} {
     padding: 0;
+    order: -1;
   }
 `;
 
@@ -50,11 +51,11 @@ const Footer = () => {
     <Wrapper>
       <Content>
         <Logo isScrolled />
+        <Socials footer="true" />
         <CopyrightInfo>
           Built with <StyledIcon icon={heartSolid} style={{ fontSize: '16px' }} /> ©{' '}
           {new Date().getFullYear()}
         </CopyrightInfo>
-        <Socials footer="true" />
       </Content>
     </Wrapper>
   );

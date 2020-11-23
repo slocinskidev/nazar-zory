@@ -3,6 +3,7 @@ import { Icon, InlineIcon } from '@iconify/react';
 import facebookOutlined from '@iconify/icons-ant-design/facebook-outlined';
 import instagramOutlined from '@iconify/icons-ant-design/instagram-outlined';
 import styled from 'styled-components';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.div`
   ${({ footer }) => !footer && `grid-area: socials`};
@@ -10,6 +11,11 @@ const Wrapper = styled.div`
   justify-content: center;
   color: ${({ theme }) => theme.color.grey1};
   ${({ footer }) => footer && `justify-self: flex-end`};
+  margin-top: ${({ footer }) => (footer ? '2rem' : '0')};
+
+  @media ${device.laptop} {
+    margin-top: 0;
+  }
 `;
 
 const IconWrapper = styled.div`
