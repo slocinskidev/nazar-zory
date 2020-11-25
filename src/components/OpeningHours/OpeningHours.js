@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.div`
   font-weight: ${({ theme }) => theme.font.bold};
@@ -7,6 +8,10 @@ const Wrapper = styled.div`
   margin: 6rem 0 2rem;
   text-align: center;
   grid-area: openinghours;
+
+  @media ${device.laptop} {
+    text-align: left;
+  }
 `;
 
 const Heading = styled.h4`

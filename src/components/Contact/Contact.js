@@ -8,6 +8,7 @@ import Address from '../Address/Address';
 import OpeningHours from '../OpeningHours/OpeningHours';
 import Button from '../Button/Button';
 import Map from '../Map/Map';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -26,10 +27,19 @@ const Content = styled.div`
     'address address'
     'map map'
     'openinghours openinghours'
-    'button button'
-    'button2 button2';
+    'button button';
   justify-content: center;
   justify-items: center;
+
+  @media ${device.laptop} {
+    grid-template-areas:
+      'heading map'
+      'address map'
+      'openinghours map'
+      'button map';
+    justify-content: space-between;
+    justify-items: start;
+  }
 `;
 
 const ButtonsWrapper = styled.div`

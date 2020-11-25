@@ -8,6 +8,13 @@ const AnchorWrapper = styled.a`
   align-items: center;
   text-decoration: none;
   grid-area: address;
+  color: ${({ theme }) => theme.color.white};
+  font-size: ${({ theme }) => theme.size.xs};
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.secondary};
+  }
 `;
 
 const StyledIcon = styled(Icon)`
@@ -17,24 +24,18 @@ const StyledIcon = styled(Icon)`
   color: ${({ theme }) => theme.color.secondary};
 `;
 
-const AddressList = styled.ul`
-  list-style: none;
-  color: ${({ theme }) => theme.color.white};
-  font-size: ${({ theme }) => theme.size.xs};
-`;
-
-const AddressItem = styled.li`
-  padding: 0.25rem;
+const AddressData = styled.p`
+  line-height: 1.5;
 `;
 
 function Address() {
   return (
-    <AnchorWrapper href="/">
+    <AnchorWrapper href="https://g.page/Kebaba?share">
       <StyledIcon icon={bxsMap} />
-      <AddressList>
-        <AddressItem>ul. Górne Przedmieście 2</AddressItem>
-        <AddressItem>44-240 Żory</AddressItem>
-      </AddressList>
+      <AddressData>
+        ul. Górne Przedmieście 2 <br />
+        44-240 Żory
+      </AddressData>
     </AnchorWrapper>
   );
 }

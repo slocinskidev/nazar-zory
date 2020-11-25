@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../../theme/device';
 
 const Wrapper = styled.header`
   width: 100%;
@@ -8,6 +9,13 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: center;
   grid-area: heading;
+
+  ${({ contact }) =>
+    contact &&
+    `@media ${device.laptop} {
+    align-items: flex-start;
+  
+  }`}
 `;
 
 const Heading = styled.h2`
@@ -32,7 +40,7 @@ const Icon = styled.img`
 
 const SectionHeading = ({ icon, heading, subHeading, contact }) => {
   return (
-    <Wrapper>
+    <Wrapper contact={contact}>
       {icon && <Icon src={icon} alt="" />}
       {subHeading && <SubHeading contact={contact}>{subHeading}</SubHeading>}
       {heading && <Heading contact={contact}>{heading}</Heading>}
