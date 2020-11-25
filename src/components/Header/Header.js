@@ -70,7 +70,7 @@ const Overlay = styled.div`
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   transition: opacity 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const Header = () => {
@@ -107,9 +107,9 @@ const Header = () => {
     <HeaderWrapper id="start">
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
       <ImageOverlay>
-        <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
         <NavigationBar isScrolled={scrolled}>
           <Logo isScrolled={scrolled} />
+          <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
           <Menu isScrolled={scrolled} isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
         </NavigationBar>
         <Hero />

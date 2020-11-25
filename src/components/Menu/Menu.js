@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import { device } from '../../theme/device';
+import Button from '../Button/Button';
 
 const NavigationWrapper = styled.nav``;
 
@@ -87,6 +88,7 @@ const NavigationList = styled.ul`
   background-color: ${({ theme }) => theme.color.white};
   height: 100vh;
   min-width: 240px;
+  width: 200px;
   text-align: center;
   padding: 2rem;
   position: fixed;
@@ -185,7 +187,21 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
             Kontakt
           </StyledLink>
         </NavigationItem>
-        <DeliveryInfo isScrolled={isScrolled} />
+        {!isScrolled ||
+          (!isMenuOpen && (
+            <>
+              <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+              <Button href="tel:324344937">Zadzwoń i zamów!</Button>
+            </>
+          ))}
+        {!isScrolled && <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />}
+        {isMenuOpen && (
+          <>
+            <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+            <Button href="tel:324344937">Zadzwoń i zamów!</Button>
+            <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
+          </>
+        )}
       </NavigationList>
     </NavigationWrapper>
   );

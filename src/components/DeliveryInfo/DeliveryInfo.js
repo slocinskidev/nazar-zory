@@ -5,9 +5,10 @@ import styled from 'styled-components';
 import { device } from '../../theme/device';
 
 const Wrapper = styled.div`
-  margin: 6rem 0 0 0;
+  /* margin: 6rem 0 0 0; */
   display: flex;
   align-items: center;
+  justify-content: center;
   color: ${({ theme }) => theme.color.grey1};
 
   @media ${device.laptop} {
