@@ -111,6 +111,12 @@ const NavigationList = styled.ul`
     li a {
       color: ${({ theme, isScrolled }) => (isScrolled ? theme.color.grey1 : theme.color.white)};
       font-size: ${({ theme, isScrolled }) => (isScrolled ? theme.size.s : theme.size.m)};
+
+      transition: 0.3s color ease-in-out;
+
+      &:hover {
+        color: ${({ theme }) => theme.color.tertiary};
+      }
     }
   }
 `;

@@ -21,7 +21,16 @@ const Wrapper = styled.div`
 const IconWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+`;
+
+const Anchor = styled.a`
   color: ${({ theme }) => theme.color.grey1};
+
+  transition: 0.3s color ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.tertiary};
+  }
 `;
 
 const StyledIcon = styled(Icon)`
@@ -43,8 +52,12 @@ const Socials = ({ text, footer }) => {
     <Wrapper footer={footer}>
       {text && <Text>{text}</Text>}
       <IconWrapper>
-        <StyledIcon footer={footer} icon={facebookOutlined} />
-        <StyledIcon footer={footer} icon={instagramOutlined} />
+        <Anchor href="https://www.facebook.com/Nazar-Kebab-%C5%BBory-154306524697148">
+          <StyledIcon footer={footer} icon={facebookOutlined} />
+        </Anchor>
+        <Anchor href="https://www.instagram.com/nazar_kebab_zory/">
+          <StyledIcon footer={footer} icon={instagramOutlined} />
+        </Anchor>
       </IconWrapper>
     </Wrapper>
   );
