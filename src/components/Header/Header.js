@@ -22,7 +22,7 @@ const StyledImage = styled(Image)`
   object-position: bottom;
 `;
 
-const Overlay = styled.div`
+const ImageOverlay = styled.div`
   width: 100%;
   min-height: 100vh;
   position: absolute;
@@ -46,6 +46,7 @@ const NavigationBar = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
+  box-shadow: ${({ isScrolled, theme }) => isScrolled && theme.boxShadow.secondary};
 
   @media ${device.laptop} {
     justify-content: space-evenly;
@@ -57,6 +58,19 @@ const NavigationBar = styled.section`
     left: 0;
     padding: 1rem 2rem;
   }
+`;
+
+const Overlay = styled.div`
+  opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
+  visibility: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
 `;
 
 const Header = () => {
@@ -92,14 +106,15 @@ const Header = () => {
   return (
     <HeaderWrapper id="start">
       <StyledImage fluid={data.file.childImageSharp.fluid} alt="" />
-      <Overlay>
+      <ImageOverlay>
+        <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
         <NavigationBar isScrolled={scrolled}>
           <Logo isScrolled={scrolled} />
           <Menu isScrolled={scrolled} isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
         </NavigationBar>
         <Hero />
         <MouseScroll />
-      </Overlay>
+      </ImageOverlay>
     </HeaderWrapper>
   );
 };

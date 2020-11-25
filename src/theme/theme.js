@@ -4,6 +4,7 @@ export const theme = {
     primary: '#2C4393',
     secondary: '#23B6C2',
     tertiary: '#E21920',
+    tertiaryDarken: '#A80006',
     black: '#000',
     white: '#fff',
     grey1: '#333',
@@ -34,5 +35,9 @@ export const theme = {
     s: '.2rem',
     m: '.5rem',
     l: '2rem',
+  },
+  boxShadow: {
+    primary: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    secondary: '0px 1px 10px rgba(0, 0, 0, 0.2)',
   },
 };

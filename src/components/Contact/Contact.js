@@ -55,13 +55,13 @@ function Contact() {
         <Map />
         <OpeningHours />
         <ButtonsWrapper>
-          <Button as="a" href="tel:324344937">
+          <Button secondary href="tel:324344937">
             <Icon icon={telephoneIcon} style={{ fontSize: '25px' }} />
             32 434 49 37
           </Button>
-          <Button as="a" href="mailto:erq.programmer@gmail.com">
+          <Button secondary href="mailto:biuro@kebabzory.pl">
             <Icon icon={emailIcon} style={{ fontSize: '25px' }} />
-            erq.programmer@gmail.com
+            biuro@kebabzory.pl
           </Button>
         </ButtonsWrapper>
       </Content>

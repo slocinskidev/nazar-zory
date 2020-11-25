@@ -9,17 +9,28 @@ const NavigationWrapper = styled.nav``;
 const Hamburger = styled.button`
   position: fixed;
   top: 5%;
-  right: 1rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 5rem;
   height: 5rem;
-  background: transparent;
+  border-radius: 50%;
+  background: ${({ theme, isScrolled }) => (isScrolled ? theme.color.tertiary : 'transparent')};
   border: none;
   cursor: pointer;
   padding: 1rem;
   z-index: 11;
+  box-shadow: ${({ theme, isScrolled }) => isScrolled && theme.boxShadow.primary};
+  transition: 0.3s background ease-in-out, box-shadow ease-in-out;
+
+  ${({ isMenuOpen }) =>
+    isMenuOpen &&
+    `
+    background: transparent;
+    box-shadow: none;
+  
+    `}
 
   &:focus {
     outline: none;
@@ -136,7 +147,13 @@ const SrOnly = styled.span`
 const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
   return (
     <NavigationWrapper>
-      <Hamburger type="button" aria-expanded="false" onClick={() => handleToggleMenu()}>
+      <Hamburger
+        isMenuOpen={isMenuOpen}
+        isScrolled={isScrolled}
+        type="button"
+        aria-expanded="false"
+        onClick={() => handleToggleMenu()}
+      >
         <SrOnly>Open/close menu</SrOnly>
         <HamburgerBox isMenuOpen={isMenuOpen} />
       </Hamburger>

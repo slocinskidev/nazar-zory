@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../theme/device';
 
-const ButtonPrimary = styled.button`
+const ButtonPrimary = styled.a`
+  cursor: pointer;
   background-color: ${({ theme }) => theme.color.tertiary};
   padding: 1.5rem 2rem;
   font-size: ${({ theme }) => theme.size.xxs};
@@ -11,8 +12,15 @@ const ButtonPrimary = styled.button`
   font-weight: ${({ theme }) => theme.font.bold};
   display: block;
   border: none;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 2rem 2rem;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s background-color ease-in-out;
+  box-shadow: ${({ theme }) => theme.boxShadow.primary};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.tertiaryDarken};
+  }
 
   @media ${device.laptop} {
     margin: 1rem 2rem;
@@ -20,43 +28,42 @@ const ButtonPrimary = styled.button`
 `;
 
 const ButtonSecondary = styled.a`
+  cursor: pointer;
   background-color: transparent;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   font-size: ${({ theme }) => theme.size.xxs};
   color: ${({ theme }) => theme.color.white};
   letter-spacing: 0.3px;
   font-weight: ${({ theme }) => theme.font.bold};
   border: 2px solid ${({ theme }) => theme.color.white};
   margin: 2rem 0rem;
-  /* text-transform: uppercase; */
   text-decoration: none;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
   justify-content: center;
   grid-column-gap: 1rem;
-  max-width: 320px;
+  width: 100%;
   transition: 0.3s color ease-in-out, 0.3s border ease-in-out;
+  box-shadow: ${({ theme }) => theme.boxShadow.primary};
 
   &:hover {
     color: ${({ theme }) => theme.color.secondary};
     border: 2px solid ${({ theme }) => theme.color.secondary};
   }
-
-  /* @media ${device.laptop} {
-    margin: 1rem 2rem;
-  } */
 `;
 
-const Button = ({ children, type, href, as }) => {
+const Button = ({ children, type, href, secondary }) => {
   return (
     <>
-      {as === 'a' ? (
+      {secondary ? (
         <ButtonSecondary href={href} type={type}>
           {children}
         </ButtonSecondary>
       ) : (
-        <ButtonPrimary type={type}>{children}</ButtonPrimary>
+        <ButtonPrimary href={href} type={type}>
+          {children}
+        </ButtonPrimary>
       )}
     </>
   );

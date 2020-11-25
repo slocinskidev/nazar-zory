@@ -32,8 +32,8 @@ const Hero = () => {
   return (
     <Wrapper>
       <Heading>Najlepszy kebab w mieście z dowozem</Heading>
-      <Button text="Zamów online" type="button" />
-      <Button text="Zadzwoń i zamów!" type="button" />
+      <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+      <Button href="tel:324344937">Zadzwoń i zamów!</Button>
     </Wrapper>
   );
 };
