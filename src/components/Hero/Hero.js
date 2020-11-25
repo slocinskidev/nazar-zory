@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../theme/device';
+import Button from '../Button/Button';
 
 const Wrapper = styled.section`
   text-align: center;
@@ -27,29 +28,12 @@ const Heading = styled.h1`
   }
 `;
 
-const Button = styled.button`
-  background-color: ${({ theme }) => theme.color.tertiary};
-  padding: 1.5rem 2rem;
-  font-size: ${({ theme }) => theme.size.xxs};
-  color: ${({ theme }) => theme.color.white};
-  letter-spacing: 0.3px;
-  font-weight: ${({ theme }) => theme.font.bold};
-  display: block;
-  border: none;
-  margin: 0 1rem 1rem 1rem;
-  text-transform: uppercase;
-
-  @media ${device.laptop} {
-    margin: 1rem 2rem;
-  }
-`;
-
 const Hero = () => {
   return (
     <Wrapper>
       <Heading>Najlepszy kebab w mieście z dowozem</Heading>
-      <Button type="button">Zamów online</Button>
-      <Button type="button">Zadzwoń i zamów!</Button>
+      <Button text="Zamów online" type="button" />
+      <Button text="Zadzwoń i zamów!" type="button" />
     </Wrapper>
   );
 };

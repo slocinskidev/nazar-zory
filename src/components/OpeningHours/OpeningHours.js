@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   font-weight: ${({ theme }) => theme.font.bold};
   color: ${({ theme }) => theme.color.white};
-  margin-top: 6rem;
+  margin: 6rem 0 2rem;
   text-align: center;
+  grid-area: openinghours;
 `;
 
 const Heading = styled.h4`

@@ -86,10 +86,10 @@ const IndexPage = () => {
         </About>
         <UpMenu id="menu">
           <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
-          <Helmet>
+          {/* <Helmet>
             <script src="https://cdn.upmenu.com/media/upmenu-widget.js" />
           </Helmet>
-          <div id="upmenu-widget" data-fixed-offset-top="100" />
+          <div id="upmenu-widget" data-fixed-offset-top="100" /> */}
         </UpMenu>
         <Contact />
       </main>

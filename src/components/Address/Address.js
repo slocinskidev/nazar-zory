@@ -7,6 +7,7 @@ const AnchorWrapper = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
+  grid-area: address;
 `;
 
 const StyledIcon = styled(Icon)`
