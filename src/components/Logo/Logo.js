@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { device } from '../../theme/device';
 
 const AnchorWrapper = styled.a`
+  cursor: pointer;
   display: block;
   width: 161px;
   height: 78px;

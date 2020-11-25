@@ -9,6 +9,7 @@ import AboutImage from '../components/AboutImage/AboutImage';
 import Socials from '../components/Socials/Socials';
 import { device } from '../theme/device';
 import Contact from '../components/Contact/Contact';
+import FrequentlyOrdered from '../components/FrequentlyOrdered/FrequentlyOrdered';
 
 const About = styled.section`
   width: 100%;
@@ -86,6 +87,7 @@ const IndexPage = () => {
         </About>
         <UpMenu id="menu">
           <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
+          <FrequentlyOrdered />
           {/* <Helmet>
             <script src="https://cdn.upmenu.com/media/upmenu-widget.js" />
           </Helmet>

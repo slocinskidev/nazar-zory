@@ -24,6 +24,8 @@ const IconWrapper = styled.div`
 `;
 
 const Anchor = styled.a`
+  cursor: pointer;
+
   color: ${({ theme }) => theme.color.grey1};
 
   transition: 0.3s color ease-in-out;
