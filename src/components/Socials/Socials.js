@@ -42,11 +42,11 @@ const StyledIcon = styled(Icon)`
 `;
 
 const Text = styled.p`
-  font-size: ${({ theme }) => theme.size.xxs};
+  font-size: ${({ theme }) => theme.size.s};
   color: ${({ theme }) => theme.color.tertiary};
   font-weight: ${({ theme }) => theme.font.extraBold};
   text-transform: uppercase;
-  padding: 4rem 0 2rem 0;
+  padding: 4rem 0 1rem 0;
 `;
 
 const Socials = ({ text, footer }) => {

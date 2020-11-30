@@ -21,7 +21,7 @@ const FoodList = styled.ul`
   text-transform: uppercase;
   font-weight: ${({ theme }) => theme.font.bold};
   letter-spacing: -1px;
-  font-size: ${({ theme }) => theme.size.l};
+  font-size: ${({ theme }) => theme.size.m};
   width: 100%;
   margin-bottom: 4rem;
 `;

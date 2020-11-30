@@ -10,6 +10,7 @@ import Socials from '../components/Socials/Socials';
 import { device } from '../theme/device';
 import Contact from '../components/Contact/Contact';
 import FrequentlyOrdered from '../components/FrequentlyOrdered/FrequentlyOrdered';
+import OurApp from '../components/OurApp/OurApp';
 
 const About = styled.section`
   width: 100%;
@@ -37,8 +38,6 @@ const About = styled.section`
 
 const UpMenu = styled.section`
   padding: 12rem 2rem;
-
-  min-height: 100vh;
 `;
 
 const AboutText = styled.p`
@@ -94,6 +93,7 @@ const IndexPage = () => {
           <div id="upmenu-widget" data-fixed-offset-top="100" /> */}
         </UpMenu>
         <Contact />
+        <OurApp />
       </main>
     </Layout>
   );

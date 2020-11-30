@@ -88,7 +88,6 @@ const NavigationList = styled.ul`
   background-color: ${({ theme }) => theme.color.white};
   height: 100vh;
   min-width: 240px;
-  width: 200px;
   text-align: center;
   padding: 2rem;
   position: fixed;
