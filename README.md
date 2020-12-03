@@ -7,8 +7,6 @@
   Nazar Kebab Żory
 </h1>
 
-Website based on Gatsby.js for Money Watch App. 
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cf079775-d034-47a1-b89e-3723682472a5/deploy-status)](https://app.netlify.com/sites/nazar-kebab-zory/deploys)
 
 ## [DEMO](https://nazar-kebab-zory.netlify.app/)
@@ -24,7 +22,7 @@ Website based on Gatsby.js for Money Watch App.
 
 ## General info
 
-Gatsby.js project for Nazar Kebab Żory. 
+This project was created for Nazar Kebab Żory. My duty was to determine client needs and that was a reason to create layout in Figma. After the approval of the layout it has been chosen Gatsby.js framework for performance, PWA, SEO and for react benefaction. Gatsby.js is very popular and it has many plugins, which may use for saving time of creation. 
 
 ## Screenshots
 
