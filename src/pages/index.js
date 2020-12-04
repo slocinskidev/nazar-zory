@@ -37,7 +37,7 @@ const About = styled.section`
 `;
 
 const UpMenu = styled.section`
-  padding: 12rem 2rem;
+  padding: 6rem 2rem 12rem;
 `;
 
 const AboutText = styled.p`
