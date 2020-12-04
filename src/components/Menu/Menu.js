@@ -193,7 +193,9 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
               <Button href="tel:324344937">Zadzwoń i zamów!</Button>
             </>
           ))}
-        {!isScrolled && <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />}
+        {!isScrolled && !isMenuOpen && (
+          <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
+        )}
         {isMenuOpen && (
           <>
             <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
