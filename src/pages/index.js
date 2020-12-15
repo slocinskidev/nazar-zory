@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Helmet from 'react-helmet';
 import Layout from '../layouts/Layout';
 import Header from '../components/Header/Header';
 import SectionHeading from '../components/SectionHeading/SectionHeading';
@@ -11,6 +10,7 @@ import { device } from '../theme/device';
 import Contact from '../components/Contact/Contact';
 import FrequentlyOrdered from '../components/FrequentlyOrdered/FrequentlyOrdered';
 import OurApp from '../components/OurApp/OurApp';
+import SEO from '../components/Seo/Seo';
 
 const About = styled.section`
   width: 100%;
@@ -62,15 +62,10 @@ const Divider = styled.div`
   margin: 0 auto;
 `;
 
-const IndexPage = () => {
-  if (typeof window !== `undefined`) {
-    window.upmenuSettings = {
-      id: '684c1bda-ce09-11e8-90ba-525400080321',
-    };
-  }
-
+const IndexPage = ({ location }) => {
   return (
     <Layout>
+      <SEO title="Strona główna" pathname={location.pathname} />
       <Header />
       <main>
         <About id="o-nas">

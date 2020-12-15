@@ -6,7 +6,7 @@ module.exports = {
     metamorfozę i za sprawą właściciela stał się jedną z najbardziej rozpoznawalnych
     restauracji typu Fast-Food w mieście.`,
     keywords: `nazar, kebab, nazar kebab, nazar kebab żory, żory kebab, żory jedzenie, jedzenie żory, kebab żory, najlepszy kebab, nazar żory`,
-    image: 'static/maskable_logo.png',
+    image: 'public/maskable_logo.png',
     url: `https://nazar-kebab-zory.netlify.app/`,
   },
   plugins: [
@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#2C4393`,
         theme_color: `#2C4393`,
         display: `standalone`,
-        icon: `static/maskable_logo.png`,
+        icon: `src/images/nazar-logo.png`,
         icon_options: {
           purpose: `any maskable`,
         },
