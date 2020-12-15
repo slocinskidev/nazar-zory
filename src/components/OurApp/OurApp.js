@@ -7,12 +7,13 @@ import googlePlayImg from '../../images/GooglePlay.svg';
 import { device } from '../../theme/device';
 
 const StyledImage = styled(Image)`
-  width: 100%;
+  width: 102%;
   height: 100%;
 `;
 
 const Wrapper = styled.section`
   max-width: 2560px;
+  overflow: hidden;
   height: 100vh;
   margin: -2rem auto 0;
   position: relative;

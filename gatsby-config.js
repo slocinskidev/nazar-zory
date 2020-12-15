@@ -1,9 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description:
-      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+    title: `Nazar Kebab Żory`,
+    description: `Nazar Kebab Żory rozpoczął działalność w 2004 roku i od początku istnienia prowadzony
+    jest przez Turka z krwi i kości Leventa Baykala. Od tego czasu lokal przeszedł kompletną
+    metamorfozę i za sprawą właściciela stał się jedną z najbardziej rozpoznawalnych
+    restauracji typu Fast-Food w mieście.`,
+    keywords: `nazar, kebab, nazar kebab, nazar kebab żory, żory kebab, żory jedzenie, jedzenie żory, kebab żory, najlepszy kebab, nazar żory`,
+    image: 'static/maskable_logo.png',
+    url: `https://nazar-kebab-zory.netlify.app/`,
   },
   plugins: [
     'gatsby-plugin-eslint',
@@ -18,20 +22,22 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'gatsby-starter-default',
-    //     short_name: 'starter',
-    //     start_url: '/',
-    //     background_color: '#663399',
-    //     theme_color: '#663399',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-    //   },
-    // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Nazar Kebab Żory`,
+        short_name: `Nazar`,
+        start_url: `/`,
+        lang: `pl`,
+        background_color: `#2C4393`,
+        theme_color: `#2C4393`,
+        display: `standalone`,
+        icon: `static/maskable_logo.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };

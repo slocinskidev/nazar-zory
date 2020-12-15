@@ -1,16 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ title, description, lang, meta, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,15 +11,15 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            keywords
+            url
           }
         }
       }
     `,
   );
-
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : `${site.siteMetadata.url}`;
 
   return (
     <Helmet
@@ -34,15 +27,29 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={`${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: 'canonical',
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
         {
+          name: 'keywords',
+          content: site.siteMetadata.keywords,
+        },
+        {
           property: `og:title`,
-          content: title,
+          content: `%s | ${site.siteMetadata.title}`,
         },
         {
           property: `og:description`,
@@ -53,20 +60,16 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:image`,
+          content: `${site.siteMetadata.url}/maskable_logo.png`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          property: `og:locale`,
+          content: 'pl_PL',
         },
         {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
+          property: `og:url`,
+          content: site.siteMetadata.url,
         },
       ].concat(meta)}
     />
@@ -74,9 +77,10 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pl`,
   meta: [],
   description: ``,
+  pathname: ``,
 };
 
 SEO.propTypes = {
@@ -84,6 +88,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  pathname: PropTypes.string,
 };
 
 export default SEO;

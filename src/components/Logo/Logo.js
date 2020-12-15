@@ -11,8 +11,8 @@ const AnchorWrapper = styled.a`
   height: 78px;
 
   @media ${device.laptop} {
-    width: ${({ isScrolled }) => (isScrolled ? '140px' : '240px')};
-    height: ${({ isScrolled }) => (isScrolled ? '68px' : '116px')};
+    width: ${({ isScrolled }) => (isScrolled ? '140px' : '180px')};
+    height: ${({ isScrolled }) => (isScrolled ? '68px' : '87px')};
   }
 `;
 

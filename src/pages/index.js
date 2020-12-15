@@ -37,7 +37,7 @@ const About = styled.section`
 `;
 
 const UpMenu = styled.section`
-  padding: 6rem 2rem 12rem;
+  padding: 12rem 2rem;
 `;
 
 const AboutText = styled.p`
@@ -55,6 +55,13 @@ const AboutText = styled.p`
   }
 `;
 
+const Divider = styled.div`
+  width: 80%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+`;
+
 const IndexPage = () => {
   if (typeof window !== `undefined`) {
     window.upmenuSettings = {
@@ -70,20 +77,29 @@ const IndexPage = () => {
           <SectionHeading icon={kebabIcon} heading="O Nas" subHeading="Kilka słów" />
           <AboutImage />
           <AboutText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum.
+            Nazar Kebab Żory rozpoczął działalność w 2004 roku i od początku istnienia prowadzony
+            jest przez Turka z krwi i kości Leventa Baykala. Od tego czasu lokal przeszedł kompletną
+            metamorfozę i za sprawą właściciela stał się jedną z najbardziej rozpoznawalnych
+            restauracji typu Fast-Food w mieście. Dodatkowo, nieustająca chęć rozwoju i polepszania
+            doznań klienta doprowadziła do przeniesienia Nazar Kebab w świat wirtualny, a
+            konkretniej była motorem napędowym do stworzenia aplikacji, dzięki której klienci w
+            łatwy i szybki sposób mogą zamówić swoje ulubione danie z dostawą wprost pod drzwi.
+            <br />
+            <br />
+            Zestawy oraz smaki osobiście komponuje właściciel, ponieważ jak mówi „Zadowolony klient
+            jest najważniejszy”. Wszystkie składniki począwszy od warzyw używanych do sałatki
+            kończąc na mięsie są nieustanie sprawdzane pod względem jakości i smaku. Receptury sosów
+            oraz temperatura obróbki mięsa są niezmienne, tak aby powracający klienci otrzymali ten
+            sam smak, który zapamiętali. Powtarzalność, jakość i tradycja, to najważniejsze wartości
+            jakimi kieruje się Nazar Kebab Żory.
+            <br />
+            <br />
+            Zapraszamy do naszego lokalu przy ul. Górne Przedmieście 2 w Żorach. Jesteśmy dla Was
+            otwarci CAŁY TYDZIEŃ!
           </AboutText>
-          <Socials text="Sprawdź nas na" />
+          <Socials text="Sprawdź nas również na" />
         </About>
+        <Divider />
         <UpMenu id="menu">
           <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
           <FrequentlyOrdered />
