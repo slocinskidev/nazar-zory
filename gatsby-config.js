@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#2C4393`,
         theme_color: `#2C4393`,
         display: `standalone`,
-        icon: `src/images/nazar-logo.png`,
+        icon: `src/images/maskable_icon.png`,
         icon_options: {
           purpose: `any maskable`,
         },
