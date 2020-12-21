@@ -29,12 +29,19 @@ const Content = styled.section`
   }
 `;
 
-const CopyrightInfo = styled.p`
+const CopyrightInfo = styled.a`
   font-size: ${({ theme }) => theme.size.xxs};
-  color: ${({ theme }) => theme.color.gray3};
+  color: ${({ theme }) => theme.color.grey1};
+  font-weight: ${({ theme }) => theme.font.medium};
   padding: 2rem 0 1rem 0;
   order: 0;
   justify-self: flex-start;
+  text-decoration: none;
+  transition: 0.3s color ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.tertiary};
+  }
 
   @media ${device.laptop} {
     padding: 0;
@@ -52,8 +59,8 @@ const Footer = () => {
       <Content>
         <Logo isScrolled />
         <Socials footer="true" />
-        <CopyrightInfo>
-          Built with <StyledIcon icon={heartSolid} style={{ fontSize: '16px' }} /> ©{' '}
+        <CopyrightInfo href="http://project-dh.pl/">
+          Built with <StyledIcon icon={heartSolid} style={{ fontSize: '16px' }} /> PDH ©{' '}
           {new Date().getFullYear()}
         </CopyrightInfo>
       </Content>
