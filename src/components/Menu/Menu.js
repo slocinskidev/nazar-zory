@@ -178,7 +178,7 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
         </NavigationItem>
         <NavigationItem>
           <StyledLink activeClass="active" to="menu" spy smooth duration={1000}>
-            Menu
+            Najczęściej wybierane
           </StyledLink>
         </NavigationItem>
         <NavigationItem>

@@ -96,7 +96,11 @@ const IndexPage = ({ location }) => {
         </About>
         <Divider />
         <UpMenu id="menu">
-          <SectionHeading icon={kebabIcon} heading="Menu" subHeading="Zamów online" />
+          <SectionHeading
+            icon={kebabIcon}
+            heading="Najczęściej wybierane"
+            subHeading="Zamów online"
+          />
           <FrequentlyOrdered />
         </UpMenu>
         <Contact />

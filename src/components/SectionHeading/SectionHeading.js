@@ -23,6 +23,7 @@ const Heading = styled.h2`
   color: ${({ theme, contact }) => (contact ? theme.color.white : theme.color.grey1)};
   font-weight: ${({ theme }) => theme.font.bold};
   margin: 1rem 0 6rem;
+  text-align: center;
 `;
 
 const SubHeading = styled.p`
