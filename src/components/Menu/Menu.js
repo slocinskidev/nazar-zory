@@ -13,8 +13,8 @@ const Hamburger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 5rem;
-  height: 5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border-radius: 50%;
   background: ${({ theme, isScrolled }) => (isScrolled ? theme.color.tertiary : 'transparent')};
   border: none;
@@ -49,9 +49,10 @@ const HamburgerBox = styled.span`
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;
-  transform-origin: 1px;
   z-index: 11;
   background-color: ${({ isMenuOpen }) => (isMenuOpen ? 'transparent' : 'white')};
+  left: 50%;
+  transform: translateX(-50%);
 
   &::before,
   &::after {
