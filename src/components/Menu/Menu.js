@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
-import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import { device } from '../../theme/device';
 import Button from '../Button/Button';
 
@@ -189,18 +188,18 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
         {!isScrolled ||
           (!isMenuOpen && (
             <>
-              <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+              <Button href="https://nazarkebabzory.upmenusite.com/" target="_blank">
+                Zamów online
+              </Button>
               <Button href="tel:324344937">Zadzwoń i zamów!</Button>
             </>
           ))}
-        {!isScrolled && !isMenuOpen && (
-          <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
-        )}
         {isMenuOpen && (
           <>
-            <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+            <Button href="https://nazarkebabzory.upmenusite.com/" target="_blank">
+              Zamów online
+            </Button>
             <Button href="tel:324344937">Zadzwoń i zamów!</Button>
-            <DeliveryInfo isScrolled={isScrolled} isMenuOpen={isMenuOpen} />
           </>
         )}
       </NavigationList>

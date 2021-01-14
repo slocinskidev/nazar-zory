@@ -1,34 +1,33 @@
 /* eslint-disable import/prefer-default-export */
 export const foodList = [
   {
-    food: 'Kebab w cieście mały 20cm',
-    price: '8,00zł',
-  },
-  {
-    food: 'Kebab w cieście standard 25cm',
+    food: 'Kebab w cieście',
     price: '13,50zł',
-  },
-  {
-    food: 'Big kebab w cieście 30cm',
-    price: '17,50zł',
+    picture: 0,
   },
   {
     food: 'Sarma kebab',
     price: '10,00zł',
-    description: 'mięso kebab, kapusta, sos',
+    picture: 1,
   },
   {
     food: 'Kubełek',
     price: '13,00zł',
-    description: 'mięso kebab, frytki, surówki, sos',
+    picture: 2,
   },
   {
-    food: 'Kebab na talerzu',
-    price: '18,00zł',
-    description: 'Mięso do wyrboru: wołowina/kurczak, frytki, surówki, sos',
+    food: 'Kebab w bułce',
+    price: '13,00zł',
+    picture: 3,
   },
   {
-    food: 'Wegetariański falafel w cieście',
+    food: 'Falafel w cieście',
     price: '9,00zł',
+    picture: 4,
+  },
+  {
+    food: 'Frytki',
+    price: '8,00zł',
+    picture: 5,
   },
 ];

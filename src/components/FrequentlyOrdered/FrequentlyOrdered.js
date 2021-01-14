@@ -2,35 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-import { foodList } from './foodList';
+// import { foodList } from './foodList';
 import Button from '../Button/Button';
 import { device } from '../../theme/device';
 
-const Ciasto = styled(Image)`
-  width: 340px;
-  height: 520px;
-`;
-
-const Kubelek = styled(Image)`
-  width: 340px;
-  height: 340px;
-`;
-
-const Sarma = styled(Image)`
-  width: 340px;
-  height: 340px;
-`;
-
-const Talerz = styled(Image)`
+const Picture = styled(Image)`
   width: 340px;
   height: 340px;
 `;
 
 const Wrapper = styled.article`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -45,6 +30,10 @@ const FoodList = styled.ul`
   font-size: ${({ theme }) => theme.size.m};
   width: 100%;
   margin-bottom: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Item = styled.li`
@@ -53,31 +42,11 @@ const Item = styled.li`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 2rem 0;
-
-  grid-template-areas:
-    'image image'
-    'food food'
-    'description description'
-    'price price';
-
-  @media ${device.laptop} {
-    text-align: left;
-    justify-content: space-between;
-
-    grid-template-areas:
-      'food price'
-      'description .';
-  }
+  margin: 2rem 1rem 6rem;
 `;
 
 const Food = styled.p`
   margin-top: 2rem;
-`;
-
-const Description = styled.p`
-  font-size: ${({ theme }) => theme.size.xxs};
-  color: ${({ theme }) => theme.color.grey2};
 `;
 
 const Price = styled.p`
@@ -105,42 +74,47 @@ const FrequentlyOrdered = () => {
     <Wrapper>
       <FoodList>
         <Item>
-          <Ciasto fluid={data.allFile.edges[3].node.childImageSharp.fluid} alt="" />
-          <Food>Kebab w cieście mały 20cm</Food>
-          <Price>8,00zł</Price>
-          <Food>Kebab w cieście standard 25cm</Food>
+          <Picture fluid={data.allFile.edges[0].node.childImageSharp.fluid} alt="Kebab w cieście" />
+          <Food>Kebab w cieście</Food>
           <Price>13,50zł</Price>
-          <Food>Big kebab w cieście 30cm</Food>
-          <Price>17,50zł</Price>
         </Item>
 
         <Item>
-          <Kubelek fluid={data.allFile.edges[0].node.childImageSharp.fluid} alt="" />
-          <Food>Kubełek</Food>
-          <Description>mięso kebab, frytki, surówki, sos</Description>
-          <Price>13,00zł</Price>
-        </Item>
-
-        <Item>
-          <Talerz fluid={data.allFile.edges[1].node.childImageSharp.fluid} alt="" />
-          <Food>Kebab na talerzu</Food>
-          <Description>Mięso do wyrboru: wołowina/kurczak, frytki, surówki, sos</Description>
-          <Price>18,00zł</Price>
-        </Item>
-
-        <Item>
-          <Sarma fluid={data.allFile.edges[2].node.childImageSharp.fluid} alt="" />
+          <Picture fluid={data.allFile.edges[5].node.childImageSharp.fluid} alt="Sarma kebab" />
           <Food>Sarma kebab</Food>
-          <Description>mięso kebab, kapusta, sos</Description>
           <Price>10,00zł</Price>
         </Item>
 
         <Item>
-          <Food>Wegetariański falafel w cieście</Food>
+          <Picture fluid={data.allFile.edges[4].node.childImageSharp.fluid} alt="Kubełek" />
+          <Food>Kubełek</Food>
+          <Price>13,00zł</Price>
+        </Item>
+
+        <Item>
+          <Picture fluid={data.allFile.edges[3].node.childImageSharp.fluid} alt="Kebab w bułce" />
+          <Food>Kebab w bułce</Food>
+          <Price>13,00zł</Price>
+        </Item>
+
+        <Item>
+          <Picture
+            fluid={data.allFile.edges[1].node.childImageSharp.fluid}
+            alt="Falafel w cieście"
+          />
+          <Food>Falafel w cieście</Food>
           <Price>9,00zł</Price>
         </Item>
+
+        <Item>
+          <Picture fluid={data.allFile.edges[2].node.childImageSharp.fluid} alt="Frytki duże" />
+          <Food>Frytki duże</Food>
+          <Price>8,00zł</Price>
+        </Item>
       </FoodList>
-      <Button href="https://nazarkebabzory.upmenusite.com/">Zamów online</Button>
+      <Button href="https://nazarkebabzory.upmenusite.com/" target="_blank">
+        Zamów online
+      </Button>
       <Button href="tel:324344937">Zadzwoń i zamów!</Button>
     </Wrapper>
   );

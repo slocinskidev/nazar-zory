@@ -15,6 +15,8 @@ const Wrapper = styled.div`
 
   @media ${device.laptop} {
     margin-top: 0;
+    display: flex;
+    place-items: center;
   }
 `;
 
@@ -25,9 +27,7 @@ const IconWrapper = styled.div`
 
 const Anchor = styled.a`
   cursor: pointer;
-
   color: ${({ theme }) => theme.color.grey1};
-
   transition: 0.3s color ease-in-out;
 
   &:hover {
@@ -47,6 +47,10 @@ const Text = styled.p`
   font-weight: ${({ theme }) => theme.font.extraBold};
   text-transform: uppercase;
   padding: 4rem 0 1rem 0;
+
+  @media ${device.laptop} {
+    padding: 0 2rem 0 0;
+  }
 `;
 
 const Socials = ({ text, footer }) => {

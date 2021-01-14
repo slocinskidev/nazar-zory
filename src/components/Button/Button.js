@@ -53,15 +53,15 @@ const ButtonSecondary = styled.a`
   }
 `;
 
-const Button = ({ children, type, href, secondary }) => {
+const Button = ({ children, type, href, secondary, target }) => {
   return (
     <>
       {secondary ? (
-        <ButtonSecondary href={href} type={type}>
+        <ButtonSecondary href={href} type={type} target={target}>
           {children}
         </ButtonSecondary>
       ) : (
-        <ButtonPrimary href={href} type={type}>
+        <ButtonPrimary href={href} type={type} target={target}>
           {children}
         </ButtonPrimary>
       )}

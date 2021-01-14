@@ -92,7 +92,7 @@ const IndexPage = ({ location }) => {
             Zapraszamy do naszego lokalu przy ul. Górne Przedmieście 2 w Żorach. Jesteśmy dla Was
             otwarci CAŁY TYDZIEŃ!
           </AboutText>
-          <Socials text="Sprawdź nas również na" />
+          <Socials text="Jesteśmy na" />
         </About>
         <Divider />
         <UpMenu id="menu">
