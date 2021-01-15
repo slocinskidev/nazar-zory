@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Icon } from '@iconify/react';
-import telephoneIcon from '@iconify-icons/bi/telephone';
+// import basketIcon from '@iconify-icons/simple-line-icons/basket';
+import basketIcon from '@iconify-icons/bx/bx-basket';
 import Button from '../Button/Button';
+import { device } from '../../theme/device';
 
 import { theme } from '../../theme/theme';
 
@@ -71,7 +73,6 @@ const Body = styled.div`
   max-width: 400px;
   z-index: 11;
   padding-top: 2rem;
-  /* margin: 0 1rem; */
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +80,10 @@ const Body = styled.div`
 
   @media (min-width: 450px) {
     right: 30px;
+  }
+
+  @media ${device.laptop} {
+    padding-top: 0;
   }
 
   &.visible {
@@ -108,7 +113,7 @@ const Overlay = styled.div`
   }
 `;
 
-const FixedButtonCTA = () => {
+const FixedButtonCTA = ({ isScrolled }) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -116,19 +121,21 @@ const FixedButtonCTA = () => {
   };
 
   return (
-    <>
-      <Overlay onClick={toggleVisible} className={visible ? 'visible' : ''} />
-      <Telephone onClick={toggleVisible}>
-        <TelephoneIcon icon={telephoneIcon} />
-      </Telephone>
+    isScrolled && (
+      <>
+        <Overlay onClick={toggleVisible} className={visible ? 'visible' : ''} />
+        <Telephone onClick={toggleVisible}>
+          <TelephoneIcon icon={basketIcon} />
+        </Telephone>
 
-      <Body className={visible ? 'visible' : ''}>
-        <Button href="https://nazarkebabzory.upmenusite.com/" target="_blank">
-          Zamów online
-        </Button>
-        <Button href="tel:324344937">Zadzwoń i zamów!</Button>
-      </Body>
-    </>
+        <Body className={visible ? 'visible' : ''}>
+          <Button href="https://nazarkebabzory.upmenusite.com/" target="_blank">
+            Zamów online
+          </Button>
+          <Button href="tel:324344937">Zadzwoń i zamów!</Button>
+        </Body>
+      </>
+    )
   );
 };
 

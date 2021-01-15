@@ -11,7 +11,6 @@ import Contact from '../components/Contact/Contact';
 import FrequentlyOrdered from '../components/FrequentlyOrdered/FrequentlyOrdered';
 import OurApp from '../components/OurApp/OurApp';
 import SEO from '../components/Seo/Seo';
-import FixedButtonCTA from '../components/FixedButtonCTA/FixedButtonCTA';
 
 const About = styled.section`
   width: 100%;
@@ -96,7 +95,6 @@ const IndexPage = ({ location }) => {
           <Socials text="Jesteśmy na" />
         </About>
         <Divider />
-        <FixedButtonCTA />
         <UpMenu id="menu">
           <SectionHeading
             icon={kebabIcon}

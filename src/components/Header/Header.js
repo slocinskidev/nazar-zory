@@ -6,6 +6,7 @@ import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import Hero from '../Hero/Hero';
 import MouseScroll from '../MouseScroll/MouseScroll';
+import FixedButtonCTA from '../FixedButtonCTA/FixedButtonCTA';
 import { device } from '../../theme/device';
 
 const HeaderWrapper = styled.header`
@@ -115,6 +116,7 @@ const Header = () => {
         <Hero />
         <MouseScroll />
       </ImageOverlay>
+      <FixedButtonCTA isScrolled={scrolled} />
     </HeaderWrapper>
   );
 };

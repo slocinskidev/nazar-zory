@@ -7,6 +7,7 @@
   "dependencies": {
     "@iconify-icons/bi": "^1.1.0",
     "@iconify-icons/bx": "^1.0.2",
+    "@iconify-icons/simple-line-icons": "^1.1.0",
     "@iconify/icons-ant-design": "^1.0.8",
     "@iconify/icons-bi": "^1.0.6",
     "@iconify/icons-carbon": "^1.0.7",
