@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Icon } from '@iconify/react';
-// import basketIcon from '@iconify-icons/simple-line-icons/basket';
 import basketIcon from '@iconify-icons/bx/bx-basket';
 import Button from '../Button/Button';
 import { device } from '../../theme/device';

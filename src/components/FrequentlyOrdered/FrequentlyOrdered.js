@@ -74,32 +74,32 @@ const FrequentlyOrdered = () => {
     <Wrapper>
       <FoodList>
         <Item>
-          <Picture fluid={data.allFile.edges[0].node.childImageSharp.fluid} alt="Kebab w cieście" />
+          <Picture fluid={data.allFile.edges[1].node.childImageSharp.fluid} alt="Kebab w cieście" />
           <Food>Kebab w cieście</Food>
           <Price>13,50zł</Price>
         </Item>
 
         <Item>
-          <Picture fluid={data.allFile.edges[5].node.childImageSharp.fluid} alt="Sarma kebab" />
+          <Picture fluid={data.allFile.edges[4].node.childImageSharp.fluid} alt="Sarma kebab" />
           <Food>Sarma kebab</Food>
           <Price>10,00zł</Price>
         </Item>
 
         <Item>
-          <Picture fluid={data.allFile.edges[4].node.childImageSharp.fluid} alt="Kubełek" />
+          <Picture fluid={data.allFile.edges[0].node.childImageSharp.fluid} alt="Kubełek" />
           <Food>Kubełek</Food>
           <Price>13,00zł</Price>
         </Item>
 
         <Item>
-          <Picture fluid={data.allFile.edges[3].node.childImageSharp.fluid} alt="Kebab w bułce" />
+          <Picture fluid={data.allFile.edges[5].node.childImageSharp.fluid} alt="Kebab w bułce" />
           <Food>Kebab w bułce</Food>
           <Price>13,00zł</Price>
         </Item>
 
         <Item>
           <Picture
-            fluid={data.allFile.edges[1].node.childImageSharp.fluid}
+            fluid={data.allFile.edges[2].node.childImageSharp.fluid}
             alt="Falafel w cieście"
           />
           <Food>Falafel w cieście</Food>
@@ -107,7 +107,7 @@ const FrequentlyOrdered = () => {
         </Item>
 
         <Item>
-          <Picture fluid={data.allFile.edges[2].node.childImageSharp.fluid} alt="Frytki duże" />
+          <Picture fluid={data.allFile.edges[3].node.childImageSharp.fluid} alt="Frytki duże" />
           <Food>Frytki duże</Food>
           <Price>8,00zł</Price>
         </Item>

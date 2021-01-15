@@ -139,6 +139,15 @@ const StyledLink = styled(Link)`
   padding: 1rem;
 `;
 
+const StyledLinkMenu = styled.a`
+  cursor: pointer;
+  font-size: ${({ theme }) => theme.size.s};
+  font-weight: ${({ theme }) => theme.font.medium};
+  color: ${({ theme }) => theme.color.grey1};
+  text-decoration: none;
+  padding: 1rem;
+`;
+
 const SrOnly = styled.span`
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -180,6 +189,11 @@ const Menu = ({ isScrolled, isMenuOpen, handleToggleMenu }) => {
           <StyledLink activeClass="active" to="menu" spy smooth duration={1000}>
             Najczęściej wybierane
           </StyledLink>
+        </NavigationItem>
+        <NavigationItem>
+          <StyledLinkMenu href="https://nazarkebabzory.upmenusite.com/" target="_blank">
+            Menu
+          </StyledLinkMenu>
         </NavigationItem>
         <NavigationItem>
           <StyledLink activeClass="active" to="kontakt" spy smooth duration={1000}>
