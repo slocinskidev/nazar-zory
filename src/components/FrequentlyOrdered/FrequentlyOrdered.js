@@ -74,9 +74,12 @@ const FrequentlyOrdered = () => {
     <Wrapper>
       <FoodList>
         <Item>
-          <Picture fluid={data.allFile.edges[1].node.childImageSharp.fluid} alt="Kebab w cieście" />
-          <Food>Kebab w cieście</Food>
-          <Price>13,50zł</Price>
+          <Picture
+            fluid={data.allFile.edges[1].node.childImageSharp.fluid}
+            alt="Kebab CLASSIC w cieście"
+          />
+          <Food>Kebab CLASSIC w cieście</Food>
+          <Price>15,00zł</Price>
         </Item>
 
         <Item>
@@ -88,13 +91,13 @@ const FrequentlyOrdered = () => {
         <Item>
           <Picture fluid={data.allFile.edges[0].node.childImageSharp.fluid} alt="Kubełek" />
           <Food>Kubełek</Food>
-          <Price>13,00zł</Price>
+          <Price>14,50zł</Price>
         </Item>
 
         <Item>
           <Picture fluid={data.allFile.edges[5].node.childImageSharp.fluid} alt="Kebab w bułce" />
           <Food>Kebab w bułce</Food>
-          <Price>13,00zł</Price>
+          <Price>14,50zł</Price>
         </Item>
 
         <Item>
@@ -103,7 +106,7 @@ const FrequentlyOrdered = () => {
             alt="Falafel w cieście"
           />
           <Food>Falafel w cieście</Food>
-          <Price>9,00zł</Price>
+          <Price>11,50zł</Price>
         </Item>
 
         <Item>

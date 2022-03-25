@@ -1,28 +1,27 @@
-/* eslint-disable import/prefer-default-export */
 export const foodList = [
   {
-    food: 'Kebab w cieście',
-    price: '13,50zł',
+    food: 'Kebab CLASSIC w cieście',
+    price: '15,00zł',
     picture: 0,
   },
   {
     food: 'Sarma kebab',
-    price: '10,00zł',
+    price: '14,00zł',
     picture: 1,
   },
   {
     food: 'Kubełek',
-    price: '13,00zł',
+    price: '14,50zł',
     picture: 2,
   },
   {
     food: 'Kebab w bułce',
-    price: '13,00zł',
+    price: '14,50zł',
     picture: 3,
   },
   {
     food: 'Falafel w cieście',
-    price: '9,00zł',
+    price: '11,50zł',
     picture: 4,
   },
   {

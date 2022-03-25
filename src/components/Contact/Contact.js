@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
+import Image from 'gatsby-image';
 import { Icon } from '@iconify/react';
 import telephoneIcon from '@iconify/icons-bi/telephone';
 import emailIcon from '@iconify/icons-carbon/email';
@@ -27,7 +29,8 @@ const Content = styled.div`
     'address address'
     'map map'
     'openinghours openinghours'
-    'button button';
+    'button button'
+    'pfr pfr';
   justify-content: center;
   justify-items: center;
 
@@ -36,7 +39,8 @@ const Content = styled.div`
       'heading map'
       'address map'
       'openinghours map'
-      'button map';
+      'button map'
+      'pfr pfr';
     justify-content: space-between;
     justify-items: start;
   }
@@ -46,13 +50,32 @@ const ButtonsWrapper = styled.div`
   grid-area: button;
 `;
 
+const Picture = styled(Image)`
+  width: 340px;
+  grid-area: pfr;
+  justify-self: center;
+`;
+
 function Contact() {
+  const data = useStaticQuery(graphql`
+    {
+      file(name: { eq: "pfr" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Wrapper id="kontakt">
       <Content>
         <SectionHeading contact heading="Kontakt" subHeading="Nie zwlekaj! Zadzwoń!" />
         <Address />
         <Map />
+        <Picture fluid={data.file.childImageSharp.fluid} alt="Ceryfikat Polski Fundusz Rozwoju" />
         <OpeningHours />
         <ButtonsWrapper>
           <Button secondary href="tel:324344937">
