@@ -43,7 +43,7 @@ This project was created for Nazar Kebab Żory. My duty was to determine client 
 
 ## Status
 
-Project is: _in progress_
+Project is: _finished_
 
 ## Contact
 
