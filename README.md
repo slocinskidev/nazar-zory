@@ -1,13 +1,7 @@
-<p align="center">
-  <a href="https://nazar-kebab-zory.netlify.app/">
-    <img src="/src/images/nazar-logo.png" alt="Nazar Kebab Żory" width="200px height="200px">
-  </a>
-</p>
 <h1 align="center">
   Nazar Kebab Żory
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cf079775-d034-47a1-b89e-3723682472a5/deploy-status)](https://app.netlify.com/sites/nazar-kebab-zory/deploys)
 
 ## [DEMO](https://nazar-kebab-zory.netlify.app/)
 
