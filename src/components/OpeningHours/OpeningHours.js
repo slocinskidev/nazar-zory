@@ -37,7 +37,9 @@ const OpeningHours = () => {
     <Wrapper>
       <Heading>Godziny otwarcia</Heading>
       <HoursList>
-        <Day>poniedziałek - czwartek</Day>
+        <Day>poniedziałek</Day>
+        <Hour>14:00 - 22:00</Hour>
+        <Day>wtorek - czwartek</Day>
         <Hour>11:00 - 22:00</Hour>
         <Day>piątek - sobota</Day>
         <Hour>11:00 - 1:00</Hour>
